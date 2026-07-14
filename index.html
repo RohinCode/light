@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fa">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>light</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        />
+    </head>
+    <body>
+        <div id="mother">
+            <section id="sidebar">
+                <h2>Chats</h2>
+            </section>
+
+            <div id="container">
+                <header>
+                    <div class="header-left">
+                        <button id="openMenuBtn" class="menu-btn">
+                            <i class="fa-solid fa-bars"></i>
+                        </button>
+
+                        <div class="profile">
+                            <img src="public/images/images.jpg" alt="Profile" />
+                            <span>Rohin</span>
+                        </div>
+                    </div>
+
+                    <div class="header-right">
+                        <button class="icon-btn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+
+                        <button class="icon-btn">
+                            <i class="fa-solid fa-phone"></i>
+                        </button>
+
+                        <button class="icon-btn">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                    </div>
+                </header>
+
+                <main>
+                    <div class="message other">سلام</div>
+                    <div class="message me">سلام، خوبی؟</div>
+                    <div class="message other">آره ممنون</div>
+                </main>
+
+                <footer>
+                    <textarea id="inputSms" placeholder="Typing..."></textarea>
+                    <button id="send">
+                        <svg
+                            width="40"
+                            height="40"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M21 4L2 10l7 2 9-7-5 8 7 2 1-11z"
+                                fill="#fff"
+                            />
+                        </svg>
+                    </button>
+                </footer>
+            </div>
+        </div>
+        <div id="sidebar-overlay"></div>
+        <script src="script.js"></script>
+    </body>
+</html>
