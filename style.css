@@ -37,17 +37,28 @@ body {
 /* ---------------- Chat ---------------- */
 
 #container {
-    height: var(--app-height);
-    height: 100dvh;
-    display: grid;
-    grid-template-rows: 70px 1fr auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
     background: var(--bg);
     min-height: 0;
+}
+
+
+main {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+}
+
+footer {
+    flex-shrink: 0;
 }
 
 /* ---------------- Header ---------------- */
 
 header {
+    flex-shrink: 0;
     height: 70px;
     display: flex;
     justify-content: space-between;

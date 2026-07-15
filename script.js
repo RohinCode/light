@@ -25,8 +25,8 @@ inputSms.addEventListener("keydown", (e) => {
 
 inputSms.addEventListener("input", () => {
     inputSms.style.height = "55px";
-    inputSms.style.height = inputSms.scrollHeight + "px";
     inputSms.dir = /[\u0590-\u08FF]/.test(inputSms.value) ? "rtl" : "ltr";
+    messagePage.scrollTop = messagePage.scrollHeight;
 });
 
 function sendMessage(text) {
@@ -38,9 +38,9 @@ function sendMessage(text) {
     message.dir = /[\u0590-\u08FF]/.test(text) ? "rtl" : "ltr";
 
     messagePage.appendChild(message);
-    message.scrollIntoView({
+    messagePage.scrollTo({
+        top: messagePage.scrollHeight,
         behavior: "smooth",
-        block: "end",
     });
     inputSms.style.height = "55px";
     inputSms.focus();
@@ -91,13 +91,8 @@ sidebar.addEventListener("click", (e) => {
     }
 });
 
-function updateHeight() {
-    document.documentElement.style.setProperty(
-        "--app-height",
-        `${window.visualViewport.height}px`,
-    );
-}
-
-updateHeight();
-
-window.visualViewport.addEventListener("resize", updateHeight);
+inputSms.addEventListener("focus", () => {
+    setTimeout(() => {
+        messagePage.scrollTop = messagePage.scrollHeight;
+    }, 300);
+});
