@@ -1,5 +1,4 @@
 //----------------------متغیر و ثابت‌ها-------------------
-
 const send = document.getElementById("send");
 const inputSms = document.getElementById("inputSms");
 const messagePage = document.querySelector("main");
@@ -10,6 +9,12 @@ const overlay = document.getElementById("sidebar-overlay");
 const others = document.querySelectorAll(".otherPersons");
 const name = document.querySelector("#name");
 const profileImg = document.querySelector(".profile img");
+const plus = document.getElementById("plus");
+const addFriend = document.getElementById("addFriend");
+const add = document.getElementById("add");
+const personsList = document.getElementById("personsList");
+const inpNum = document.getElementById("inpNum");
+const inpName = document.getElementById("inpName");
 //-------------------نمایش پیام نوشته شده توسط من----------
 send.addEventListener("click", () => {
     sendMessage(inputSms.value);
@@ -95,4 +100,26 @@ inputSms.addEventListener("focus", () => {
     setTimeout(() => {
         messagePage.scrollTop = messagePage.scrollHeight;
     }, 300);
+});
+
+// --------------------------------اضافه کردن  افراد-----------------------------
+
+plus.addEventListener("click", () => {
+    addFriend.classList.toggle("show");
+});
+
+add.addEventListener("click", () => {
+    if (inpName.value.trim() === "" ) {
+        addFriend.classList.remove("show");
+    } else {
+        const otherPersons = document.createElement("div");
+        otherPersons.classList.add("otherPersons");
+        const otherPersonsName = document.createElement("span");
+        otherPersonsName.innerText = inpName.value;
+        otherPersons.appendChild(otherPersonsName);
+        personsList.appendChild(otherPersons);
+        inpName.value = "";
+        inpNum.value = "";
+        addFriend.classList.remove("show");
+    }
 });

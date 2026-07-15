@@ -44,7 +44,6 @@ body {
     min-height: 0;
 }
 
-
 main {
     flex: 1;
     overflow-y: auto;
@@ -75,6 +74,7 @@ header {
     border-left: 1px solid rgba(255, 255, 255, 0.05);
     height: 100dvh;
     display: flex;
+    position: relative;
     flex-direction: column;
 }
 
@@ -137,6 +137,91 @@ header {
 
 #plus:hover {
     background: #0083da;
+    transform: translateY(-2px);
+}
+
+#addFriend {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: 250px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 20px #0000005e;
+    background: linear-gradient(90deg, #d7dddf, #b2c1c5);
+    opacity: 0;
+    transform: translateY(30px);
+    visibility: hidden;
+    gap: 8px;
+    position: absolute;
+    
+    bottom: 90px;
+    left: 20px;
+    
+    z-index: 100;
+    
+    
+    transition: 0.3s ease;
+}
+
+#addFriend.show {
+    opacity: 1;
+    transform: translateY(0);
+
+    visibility: visible;
+}
+
+#addFriend p {
+    font-size: 13px;
+    color: #061120;
+    margin-top: 4px;
+}
+
+#addFriend input {
+    width: 100%;
+    padding: 7px 14px;
+    margin: 5px 0;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background: #f5f7fa;
+    color: #0f1f35;
+    font-size: 14px;
+    transition: 0.25s;
+    box-shadow: inset 0 0 0 2px transparent;
+}
+
+#addFriend input::placeholder {
+    color: #7b8794;
+}
+
+#addFriend input:focus {
+    background: white;
+    box-shadow: inset 0 0 0 2px #0099ff;
+}
+
+#addFriend button {
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #00d9ff, #019aff);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.25s;
+}
+
+#addFriend button:active {
+    transform: scale(0.95);
+}
+
+#addFriend button:hover {
+    background: linear-gradient(180deg, #0c84d4, #01bbdb);
     transform: translateY(-2px);
 }
 
@@ -301,9 +386,9 @@ footer #inputSms::placeholder {
     color: var(--text-light);
 }
 
-/* ---------------- Button ---------------- */
+/* ---------------- #send ---------------- */
 
-button {
+#send {
     width: 55px;
     height: 55px;
     border: none;
@@ -316,16 +401,16 @@ button {
     transition: 0.25s;
 }
 
-button:active {
+#send:active {
     transform: scale(0.95);
 }
 
-button:hover {
+#send:hover {
     background: var(--navy-hover);
     transform: translateY(-2px);
 }
 
-button svg {
+#send svg {
     width: 30px;
     height: 30px;
 }
@@ -415,12 +500,12 @@ button svg {
         font-size: 14px;
     }
 
-    button {
+    #send {
         width: 48px;
         height: 48px;
     }
 
-    button svg {
+    #send svg {
         width: 24px;
         height: 24px;
     }
