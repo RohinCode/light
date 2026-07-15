@@ -123,3 +123,15 @@ add.addEventListener("click", () => {
         addFriend.classList.remove("show");
     }
 });
+
+
+function updateHeight() {
+    document.documentElement.style.setProperty(
+        "--app-height",
+        `${window.visualViewport.height}px`
+    );
+}
+
+updateHeight();
+
+window.visualViewport.addEventListener("resize", updateHeight);

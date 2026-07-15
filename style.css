@@ -28,16 +28,15 @@ body {
 }
 
 #mother {
-    min-height: 100dvh;
+    min-height: 100%;
     display: grid;
     grid-template-columns: 320px 1fr;
-    height: var(--app-height);
 }
 
 /* ---------------- Chat ---------------- */
 
 #container {
-    height: 100vh;
+    height: var(--app-height);
     display: flex;
     flex-direction: column;
     background: var(--bg);
@@ -440,7 +439,7 @@ footer #inputSms::placeholder {
         right: 0;
 
         width: 320px;
-        height: 100vh;
+        height: 100dvh;
 
         background: var(--navy);
 
@@ -483,9 +482,7 @@ footer #inputSms::placeholder {
         font-size: 25px;
         padding: 10px;
     }
-    #container {
-        grid-template-rows: 60px minmax(0, 1fr) 80px;
-    }
+
     main {
         padding: 15px;
         gap: 12px;
