@@ -28,7 +28,7 @@ body {
 }
 
 #mother {
-    min-height: 100dvh;
+    min-height: 100%;
     display: grid;
     grid-template-columns: 320px 1fr;
 }
@@ -36,7 +36,7 @@ body {
 /* ---------------- Chat ---------------- */
 
 #container {
-    height: 100dvh;
+    height: 100%;
     display: grid;
     grid-template-rows: 70px 1fr auto;
     background: var(--bg);
@@ -75,7 +75,7 @@ header {
     flex: 1;
     overflow-y: auto;
 
-    min-height: 0
+    min-height: 0;
 }
 
 #personsList::-webkit-scrollbar {
@@ -109,8 +109,6 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    bottom: 8px;
-    left: 30px;
     box-shadow: 2px 2px 30px #000000bb;
     border-radius: 50%;
     background-color: #0099ff;
@@ -120,7 +118,6 @@ header {
     margin-top: 10px;
     align-self: flex-start;
 }
-
 #plus:active {
     transform: scale(0.95);
 }
@@ -323,6 +320,10 @@ button svg {
 /* --------------------------رسپانسیو--------------------------- */
 
 @media (max-width: 900px) {
+    #plus {
+        margin-bottom: 35px;
+    }
+
     #mother {
         grid-template-columns: 1fr;
     }
