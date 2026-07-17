@@ -1,7 +1,7 @@
 //----------------------متغیر و ثابت‌ها-------------------
 const send = document.getElementById("send");
 const inputSms = document.getElementById("inputSms");
-const messagePage = document.querySelector("main");
+const messagePage = document.querySelector("#container main");
 const openMenuBtn = document.getElementById("openMenuBtn");
 const otherMsg = document.querySelectorAll(".other");
 const sidebar = document.getElementById("sidebar");
