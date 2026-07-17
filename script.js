@@ -16,7 +16,7 @@ const personsList = document.getElementById("personsList");
 const inpNum = document.getElementById("inpNum");
 const inpName = document.getElementById("inpName");
 
-// sflh';k;lk
+// sflh';k;lkfrffffffffffffffffffff
 
 //-------------------نمایش پیام نوشته شده توسط من----------
 send.addEventListener("click", () => {
