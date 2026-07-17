@@ -4,6 +4,23 @@
 }
 
 :root {
+    --navy-950: #050f1e;
+    --navy-900: #081b30;
+    --navy-800: #0f2a47;
+    --navy-700: #173a5e;
+    --navy-600: #204c78;
+    --navy-500: #2f6394;
+    --ink: #0c2036;
+    --white: #ffffff;
+    --off-white: #f4f7fb;
+    --mist: #dbe6f2;
+    --gold: #d1a954;
+    --online: #3ecf8e;
+    --danger: #e2596b;
+    --shadow: 0 10px 30px rgba(5, 15, 30, 0.15);
+    --radius-lg: 22px;
+    --radius-md: 14px;
+    --radius-sm: 10px;
     --bg: #dddddd;
     --surface: #f7f7f7;
     --navy: #183153;
@@ -21,11 +38,6 @@
     font-family: IranSans;
 }
 
-html,
-body {
-    height: 100%;
-    background: var(--bg);
-}
 
 #mother {
     min-height: 100%;
@@ -43,19 +55,19 @@ body {
     min-height: 0;
 }
 
-main {
+#container main {
     flex: 1;
     overflow-y: auto;
     min-height: 0;
 }
 
-footer {
+#container footer {
     flex-shrink: 0;
 }
 
-/* ---------------- Header ---------------- */
+/* ---------------- #container header---------------- */
 
-header {
+#container header {
     flex-shrink: 0;
     height: 70px;
     display: flex;
@@ -67,9 +79,6 @@ header {
 }
 
 #sidebar {
-    background: var(--navy);
-    color: white;
-    padding: 25px;
     border-left: 1px solid rgba(255, 255, 255, 0.05);
     height: 100dvh;
     display: flex;
@@ -77,31 +86,9 @@ header {
     flex-direction: column;
 }
 
-#sidebar h2 {
-    margin-bottom: 16px;
-    font-size: 24px;
-    text-align: center;
-}
-
-#personsList {
-    flex: 1;
-    overflow-y: auto;
-
-    min-height: 0;
-}
-
-#personsList::-webkit-scrollbar {
-    width: 8px;
-}
-
-#personsList::-webkit-scrollbar-thumb {
-    background: #4b6584;
-    border-radius: 10px;
-}
-
 /* ---------------------other------------------------ */
 
-.otherPersons {
+/* .otherPersons {
     background: transparent;
     margin: 10px;
     padding: 10px;
@@ -113,116 +100,9 @@ header {
 
 .otherPersons:hover {
     background-color: #00000025;
-}
+} */
 
 /* ----------------plus--------------------- */
-
-#plus {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 2px 2px 30px #000000bb;
-    border-radius: 50%;
-    background-color: #0099ff;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    margin-top: 10px;
-    align-self: flex-start;
-}
-#plus:active {
-    transform: scale(0.95);
-}
-
-#plus:hover {
-    background: #0083da;
-    transform: translateY(-2px);
-}
-
-#addFriend {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 200px;
-    height: 250px;
-    border-radius: 20px;
-    box-shadow: 2px 2px 20px #0000005e;
-    background: linear-gradient(90deg, #d7dddf, #b2c1c5);
-    opacity: 0;
-    transform: translateY(30px);
-    visibility: hidden;
-    gap: 8px;
-    position: absolute;
-    
-    bottom: 90px;
-    left: 20px;
-    
-    z-index: 100;
-    
-    
-    transition: 0.3s ease;
-}
-
-#addFriend.show {
-    opacity: 1;
-    transform: translateY(0);
-
-    visibility: visible;
-}
-
-#addFriend p {
-    font-size: 13px;
-    color: #061120;
-    margin-top: 4px;
-}
-
-#addFriend input {
-    width: 100%;
-    padding: 7px 14px;
-    margin: 5px 0;
-    border: none;
-    outline: none;
-    border-radius: 10px;
-    background: #f5f7fa;
-    color: #0f1f35;
-    font-size: 14px;
-    transition: 0.25s;
-    box-shadow: inset 0 0 0 2px transparent;
-}
-
-#addFriend input::placeholder {
-    color: #7b8794;
-}
-
-#addFriend input:focus {
-    background: white;
-    box-shadow: inset 0 0 0 2px #0099ff;
-}
-
-#addFriend button {
-    padding: 10px;
-    width: 40px;
-    height: 40px;
-    border: none;
-    outline: none;
-    border-radius: 6px;
-    background: linear-gradient(90deg, #00d9ff, #019aff);
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.25s;
-}
-
-#addFriend button:active {
-    transform: scale(0.95);
-}
-
-#addFriend button:hover {
-    background: linear-gradient(180deg, #0c84d4, #01bbdb);
-    transform: translateY(-2px);
-}
 
 /* سمت راست هدر (منو + پروفایل) */
 
@@ -283,9 +163,9 @@ header {
 .menu-btn:hover {
     background: #18315314;
 }
-/* ---------------- Main ---------------- */
+/* ---------------- #container main ---------------- */
 
-main {
+#container main {
     min-height: 0;
     overflow-y: auto;
     padding: 25px;
@@ -296,11 +176,11 @@ main {
 
 /* Scroll */
 
-main::-webkit-scrollbar {
+#container main::-webkit-scrollbar {
     width: 8px;
 }
 
-main::-webkit-scrollbar-thumb {
+#container main::-webkit-scrollbar-thumb {
     background: #b7c3d1;
     border-radius: 10px;
 }
@@ -347,9 +227,9 @@ main::-webkit-scrollbar-thumb {
     border-radius: 16px 16px 4px 16px;
 }
 
-/* ---------------- Footer ---------------- */
+/* ---------------- #container footer ---------------- */
 
-footer {
+#container footer {
     background: var(--bg);
     display: grid;
     grid-template-columns: 1fr 70px;
@@ -361,7 +241,7 @@ footer {
 
 /* ---------------- input ---------------- */
 
-footer #inputSms {
+#container footer #inputSms {
     resize: none;
     width: 100%;
     max-height: 180px;
@@ -376,12 +256,12 @@ footer #inputSms {
     overflow-y: auto;
 }
 
-footer #inputSms:focus {
+#container footer #inputSms:focus {
     border-color: var(--navy-light);
     background: white;
 }
 
-footer #inputSms::placeholder {
+#container footer #inputSms::placeholder {
     color: var(--text-light);
 }
 
@@ -478,16 +358,16 @@ footer #inputSms::placeholder {
     .message {
         max-width: 90%;
     }
-    header {
+    #container header {
         font-size: 25px;
         padding: 10px;
     }
 
-    main {
+    #container main {
         padding: 15px;
         gap: 12px;
     }
-    footer {
+    #container footer {
         padding: 10px;
         gap: 10px;
     }
@@ -519,7 +399,360 @@ footer #inputSms::placeholder {
         gap: 2px;
     }
 
-    header {
+    #container header {
         padding: 0 10px;
     }
+}
+
+.father {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    direction: rtl;
+    overflow: hidden;
+    height: 100dvh;
+}
+
+.container2 {
+    height: 100%;
+    width: 330px;
+    background-color: #12263b;
+}
+
+.top h2 {
+    margin-top: 15px;
+    color: white;
+    text-shadow: 0px 0px 15px white;
+    text-align: center;
+}
+
+.middle {
+    margin: 20px 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container2 header .middle input {
+    padding: 13px;
+    width: 250px;
+    align-items: center;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid #ffffff14;
+    background: rgba(255, 255, 255, 0.06);
+    transition:
+        background 0.2s,
+        border-color 0.2s;
+}
+
+.container2 header .middle input::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.container2 header .middle input:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #d1a954;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px 10px;
+}
+
+.bottom span {
+    /* color: #6f707094; */
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.noActive {
+    color: #90929294;
+}
+.active2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3777c011;
+    color: #d1a954;
+}
+
+.chat-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 4px 10px 12px;
+}
+
+.chat-list::-webkit-scrollbar {
+    width: 5px;
+}
+.chat-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+}
+
+.sidebar-foot {
+    width: 300px;
+    position: fixed;
+    bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+.sidebar-foot .name {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--white);
+}
+.sidebar-foot .sub {
+    font-size: 11.5px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.avatar {
+    position: relative;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--navy-600), var(--navy-800));
+}
+.avatar.sm {
+    width: 38px;
+    height: 38px;
+    font-size: 13px;
+}
+.avatar.lg {
+    width: 44px;
+    height: 44px;
+}
+
+.icon-botton {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--mist);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition:
+        background 0.2s,
+        transform 0.2s,
+        color 0.2s;
+    font-size: 14px;
+}
+.icon-botton:hover {
+    background: rgba(255, 255, 255, 0.14);
+    color: var(--white);
+    transform: translateY(-1px);
+}
+.icon-botton:active {
+    transform: scale(0.92);
+}
+
+.adam {
+    cursor: pointer;
+    display: flex;
+    align-items: start;
+    position: relative;
+    margin: 8px 0;
+}
+
+.adam div {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--white);
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+
+.adam #w1 {
+    background: linear-gradient(135deg, #3ecf8e, #1a6b4a);
+}
+.adam #w2 {
+    background: linear-gradient(135deg, #e2596b, #8a2c3a);
+}
+.adam #w3 {
+    background: linear-gradient(135deg, #2f6394, #15385e);
+}
+.adam #w4 {
+    background: linear-gradient(135deg, #d1a954, #8a6a2c);
+}
+.adam #w5 {
+    background: linear-gradient(135deg, #173a5e, #050f1e);
+}
+
+.adam p {
+    color: white;
+    font-weight: bold;
+    margin: 0 10px;
+    font-size: 15px;
+}
+
+.time {
+    position: absolute;
+    left: 4px;
+    font-size: 13px;
+    color: #636363;
+}
+
+.dot-online {
+    width: 10px;
+    height: 10px;
+    background: var(--online);
+    border-radius: 50%;
+    position: absolute;
+    left: -1px;
+    bottom: -1px;
+    border: 1px solid black;
+}
+
+.dot-online::after {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    border: 2px solid var(--online);
+    opacity: 0.7;
+    animation: pulse 1.8s infinite;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(0.7);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.9);
+        opacity: 0;
+    }
+}
+#plus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 30px #000000bb;
+    border-radius: 50%;
+    background-color: #0099ff;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    margin-top: 10px;
+    align-self: flex-start;
+}
+#plus:active {
+    transform: scale(0.95);
+}
+
+#plus:hover {
+    background: #0083da;
+    transform: translateY(-2px);
+}
+
+#addFriend {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: 250px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 20px #0000005e;
+    background: linear-gradient(90deg, #d7dddf, #b2c1c5);
+    opacity: 0;
+    transform: translateY(30px);
+    visibility: hidden;
+    gap: 8px;
+    position: absolute;
+
+    bottom: 90px;
+    left: 20px;
+
+    z-index: 100;
+
+    transition: 0.3s ease;
+}
+
+#addFriend.show {
+    opacity: 1;
+    transform: translateY(0);
+
+    visibility: visible;
+}
+
+#addFriend p {
+    font-size: 13px;
+    color: #061120;
+    margin-top: 4px;
+}
+
+#addFriend input {
+    width: 100%;
+    padding: 7px 14px;
+    margin: 5px 0;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background: #f5f7fa;
+    color: #0f1f35;
+    font-size: 14px;
+    transition: 0.25s;
+    box-shadow: inset 0 0 0 2px transparent;
+}
+
+#addFriend input::placeholder {
+    color: #7b8794;
+}
+
+#addFriend input:focus {
+    background: white;
+    box-shadow: inset 0 0 0 2px #0099ff;
+}
+
+#addFriend button {
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #00d9ff, #019aff);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.25s;
+}
+
+#addFriend button:active {
+    transform: scale(0.95);
+}
+
+#addFriend button:hover {
+    background: linear-gradient(180deg, #0c84d4, #01bbdb);
+    transform: translateY(-2px);
 }
