@@ -15,6 +15,7 @@ const add = document.getElementById("add");
 const personsList = document.getElementById("personsList");
 const inpNum = document.getElementById("inpNum");
 const inpName = document.getElementById("inpName");
+
 //-------------------نمایش پیام نوشته شده توسط من----------
 send.addEventListener("click", () => {
     sendMessage(inputSms.value);
